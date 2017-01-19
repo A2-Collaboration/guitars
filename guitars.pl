@@ -8,6 +8,7 @@ my $TAG = shift @ARGV || 'TheDarkness';
 my %data;
 while(my $line = <DATA>) {
   chomp $line;
+  next if $line =~ /^\s*$/;
   my($tag, $ythash, $start, $length) = split(/\s+/,$line);
   my $wavfile = md5_hex($line).'.wav';
   $data{$tag} = [$wavfile,
@@ -34,3 +35,5 @@ TheDarkness tKjZuykKY1I   2:02.8 9.5
 SmoothCriminal CDl9ZMfj6aE 0 8
 WhiteStripes 6j7huh5Egew 0 8
 DoIWannaKnow bpOSxM0rNPM 5.5 13
+OpenYourEyes Gm809_rRJCo 8.5 10
+
