@@ -1,6 +1,7 @@
 #!/usr/bin/perl
 use strict;
 use warnings;
+use Digest::MD5 'md5_hex';
 
 my $TAG = shift @ARGV || 'TheDarkness';
 
@@ -8,13 +9,19 @@ my %data;
 while(my $line = <DATA>) {
   chomp $line;
   my($tag, $ythash, $start, $length) = split(/\s+/,$line);
-  $data{$tag} = [$ythash, $start, $length];
+  my $wavfile = md5_hex($line).'.wav';
+  $data{$tag} = [$wavfile,
+                 sprintf("mpv --no-video ytdl://%s --start %s --length %s --ao=pcm --ao-pcm-file=$wavfile",
+                         $ythash, $start, $length)];
 }
 if($TAG eq "list") {
 	print "$_\n" for keys %data;
 } else {
-	my $cmdline = sprintf("mpv --no-video ytdl://%s --start %s --length %s", @{$data{$TAG}});
-	system($cmdline);
+  my $wavfile = $data{$TAG}->[0];
+  unless(-f $wavfile) {
+    system($data{$TAG}->[1]);
+  }
+  system("mpv $wavfile");
 }
 
 
