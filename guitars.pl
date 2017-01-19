@@ -2,7 +2,7 @@
 use strict;
 use warnings;
 
-my $TAG = shift @ARGV or die "Provide songname";
+my $TAG = shift @ARGV || 'TheDarkness';
 
 my %data;
 while(my $line = <DATA>) {
@@ -13,7 +13,7 @@ while(my $line = <DATA>) {
 if($TAG eq "list") {
 	print "$_\n" for keys %data;
 } else {
-	my $cmdline = sprintf("mpv --no-video ytdl://%s --start %.2f --length %.2f", @{$data{$TAG}});
+	my $cmdline = sprintf("mpv --no-video ytdl://%s --start %s --length %s", @{$data{$TAG}});
 	system($cmdline);
 }
 
@@ -22,4 +22,4 @@ __DATA__
 Ramstein 	W3q8Od5qJio	16.5  5
 TeenSpirit	hTWKbfoikeg    9  5
 ChopSuey	CSvFpBOe8eY   30  5
-TheDarkness tKjZuykKY1I   11  8
+TheDarkness tKjZuykKY1I   2:02.8 9.5
