@@ -15,15 +15,22 @@ while(my $line = <DATA>) {
                  sprintf("mpv --no-video ytdl://%s --start %s --length %s --ao=pcm --ao-pcm-file=$wavfile",
                          $ythash, $start, $length)];
 }
+
 if($TAG eq "list") {
 	print "$_\n" for keys %data;
-} else {
-  my $wavfile = $data{$TAG}->[0];
-  unless(-f $wavfile) {
-    system($data{$TAG}->[1]);
-  }
-  system("mpv $wavfile");
+  exit;
 }
+
+if($TAG eq "random") {
+  $TAG = (keys %data)[rand keys %data];
+}
+
+my $wavfile = $data{$TAG}->[0];
+unless(-f $wavfile) {
+  system($data{$TAG}->[1]);
+}
+system("mpv $wavfile");
+
 
 
 __DATA__
