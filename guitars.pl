@@ -16,3 +16,5 @@ system($cmdline);
 
 __DATA__
 Ramstein 	W3q8Od5qJio	16.5  5
+TeenSpirit	hTWKbfoikeg    9  5
+ChopSuey	CSvFpBOe8eY   30  5
