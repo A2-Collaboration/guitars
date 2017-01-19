@@ -36,4 +36,5 @@ SmoothCriminal CDl9ZMfj6aE 0 8
 WhiteStripes 6j7huh5Egew 0 8
 DoIWannaKnow bpOSxM0rNPM 5.5 13
 OpenYourEyes Gm809_rRJCo 8.5 10
-
+SelfEsteem Bz7IGr3hWog  4.8 10
+ReasonToBelieve kPNUimo_nAc 29 10
