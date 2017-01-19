@@ -28,7 +28,7 @@ if($TAG eq "list") {
 
 __DATA__
 DuHast 	W3q8Od5qJio	17  10
-Engel 	P1p78dva8uA 20.5 38.7
+Engel 	P1p78dva8uA 20.5 19.7
 TeenSpirit	hTWKbfoikeg    9  5
 ChopSuey	CSvFpBOe8eY   30  5
 TheDarkness tKjZuykKY1I   2:02.8 9.5
