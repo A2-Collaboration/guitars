@@ -1,3 +1,3 @@
-player command:
+Install mpv and youtube-dl on your machine. Set PULSE_SERVER to
+destination host.
 
-mpv --no-video ytdl://<hash> --start <time> --length
