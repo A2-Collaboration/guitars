@@ -34,6 +34,7 @@ system("mpv $wavfile");
 
 
 __DATA__
+--hard W3q8Od5qJio	17  12
 DuHast 	W3q8Od5qJio	17  10
 Engel 	P1p78dva8uA 20.5 19.7
 TeenSpirit	hTWKbfoikeg    9  5
